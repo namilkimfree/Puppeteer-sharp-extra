@@ -7,7 +7,7 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha.RestClient
     public class PollingBuilder<T>
     {
         private readonly RestSharp.RestClient _client;
-        private readonly RestRequest _request;
+        private readonly RestSharp.RestRequest _request;
         private int _timeout = 5;
         private int _limit = 5;
         public PollingBuilder(RestSharp.RestClient client, RestRequest request)

@@ -25,10 +25,10 @@ namespace PuppeteerExtraSharp.Plugins
         public virtual void BeforeConnect(ConnectOptions options) { }
         public virtual void AfterConnect(IBrowser browser) { }
         public virtual void OnBrowser(IBrowser browser) { }
-        public virtual void OnTargetCreated(ITarget target) { }
+        public virtual void OnTargetCreated(Target target) { }
         public virtual Task OnPageCreated(IPage page) { return Task.CompletedTask; }
-        public virtual void OnTargetChanged(ITarget target) { }
-        public virtual void OnTargetDestroyed(ITarget target) { }
+        public virtual void OnTargetChanged(Target target) { }
+        public virtual void OnTargetDestroyed(Target target) { }
         public virtual void OnDisconnected() { }
         public virtual void OnClose() { }
         public virtual void OnPluginRegistered() { }

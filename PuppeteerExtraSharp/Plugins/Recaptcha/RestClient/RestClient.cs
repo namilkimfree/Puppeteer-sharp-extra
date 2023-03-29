@@ -32,12 +32,7 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha.RestClient
         public async Task<T> PostWithQueryAsync<T>(string url, Dictionary<string, string> query, CancellationToken token = default)
         {
             var request = new RestRequest(url) { Method = Method.Post };
-
-            foreach (var keyValue in query)
-            {
-                request.AddQueryParameter(keyValue.Key, keyValue.Value);
-            }
-
+            request.AddQueryParameters(query);
             return await _client.PostAsync<T>(request, token);
         }
 

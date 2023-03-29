@@ -76,7 +76,7 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha
             {
                 await page.EvaluateFunctionAsync($@"(value) => {{{script}}}", value);
             }
-            catch(Exception ex)
+            catch
             {
                 // ignored
             }

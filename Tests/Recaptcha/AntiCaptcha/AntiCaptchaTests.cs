@@ -1,4 +1,5 @@
-﻿using PuppeteerExtraSharp.Plugins.Recaptcha;
+﻿using Extra.Tests.Properties;
+using PuppeteerExtraSharp.Plugins.Recaptcha;
 using PuppeteerSharp;
 using Xunit;
 using Xunit.Abstractions;
@@ -65,12 +66,12 @@ namespace Extra.Tests.Recaptcha.AntiCaptcha
         //    await CheckSuccessVerify(page);
         //}
 
-        //private async Task CheckSuccessVerify(Page page)
-        //{
-        //    var successElement = await page.QuerySelectorAsync("div[id='main'] div[class='description'] h2");
-        //    var elementValue = await (await successElement.GetPropertyAsync("textContent")).JsonValueAsync<string>();
-        //    Assert.NotNull(successElement);
-        //    Assert.Equal("Успешная верификация!", elementValue);
-        //}
+        private async Task CheckSuccessVerify(IPage page)
+        {
+            var successElement = await page.QuerySelectorAsync("div[id='main'] div[class='description'] h2");
+            var elementValue = await (await successElement.GetPropertyAsync("textContent")).JsonValueAsync<string>();
+            Assert.NotNull(successElement);
+            Assert.Equal("Успешная верификация!", elementValue);
+        }
     }
 }
